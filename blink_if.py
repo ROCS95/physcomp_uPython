@@ -2,14 +2,14 @@
 blink w/ if statement
 '''
 
-import machine
-from time import sleep_ms
+from machine import Pin
+from time import sleep
 
-led = machine.Pin(13, machine.Pin.OUT)
+led = Pin(15, Pin.OUT)
 
 while True:
     if led.value() == 0:
         led.value(1)
     else:
         led.value(0)
-    sleep_ms(20)
+    sleep(1)

@@ -4,9 +4,9 @@
 '''
 
 from time import sleep
-import machine
+from machine Pin, PWM
 
-pwm = machine.PWM(machine.Pin(15))
+pwm = PWM(Pin(15))
 pwm.freq(60)
 
 while True:

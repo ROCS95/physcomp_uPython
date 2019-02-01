@@ -2,15 +2,15 @@
 button_led.py
 '''
 
-import machine
-import time
+from machine import Pin
+from time import sleep_ms
 
-button = machine.Pin(12, machine.Pin.IN, machine.Pin.PULL_UP)
-led = machine.Pin(27, machine.Pin.OUT)
+button = Pin(12, Pin.IN, Pin.PULL_UP)
+led = Pin(15, Pin.OUT)
 
 while True:
     if not button.value():
         led.value(1)
     else:
         led.value(0)
-    time.sleep_ms(20)
+    sleep_ms(20)

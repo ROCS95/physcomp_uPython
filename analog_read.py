@@ -1,10 +1,10 @@
 # analog read
 
-import machine
+from machine import ADC, Pin
 from time import sleep_ms
 
-adc = machine.ADC(machine.Pin(34))
-adc.atten(machine.ADC.ATTN_11DB)
+adc = ADC(Pin(34))
+adc.atten(ADC.ATTN_11DB)
 
 while True:
   print(adc.read())

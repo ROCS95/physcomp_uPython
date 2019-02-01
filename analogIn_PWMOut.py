@@ -1,16 +1,16 @@
 # analog in to pwm out
 
-import machine
+from machine import ADC, Pin, PWM
 from time import sleep_ms
 
-ledPin = machine.Pin(15)
-potPin = machine.Pin(34)
+ledPin = Pin(15)
+potPin = Pin(34)
 
-pot = machine.ADC(potPin)
-pot.atten(machine.ADC.ATTN_11DB)
-pot.width(machine.ADC.WIDTH_10BIT) # 0 - 1023
+pot = ADC(potPin)
+pot.atten(ADC.ATTN_11DB)
+pot.width(ADC.WIDTH_10BIT) # 0 - 1023
 
-pwm = machine.PWM(ledPin)
+pwm = PWM(ledPin)
 pwm.freq(100)
 
 while True:
