@@ -26,15 +26,16 @@ while True:
         press = ' '.join(["diff is", str(diff), "trigger detected!" ])
         print(press)
         counter+=1
-        current_count = ' '.join(["counter is", str(counter)])
+        current_count = ' '.join(["num triggers:", str(counter)])
         print(current_count)
         sleep_ms(500) # this is a hack but stops repeated counts
         if counter == limit:
             print("DONE!")
-            # break # uncomment to break out of loop
-            counter = 0 # uncomment to reset loop to 0
+            break # uncomment to break out of loop
+            # counter = 0 # uncomment to reset loop to 0
     else:
         diff = current_val - prev_val
-        # print(diff)
+        nopress = ' '.join(["diff is", str(diff), "no trigger!"])
+        print(nopress)
     prev_val = current_val
     sleep_ms(20)
