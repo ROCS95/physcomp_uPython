@@ -14,28 +14,29 @@ pot.width(ADC.WIDTH_10BIT) # 0 - 1023
 threshold = 200
 
 prev_val = pot.read()
+prev_state = False
 counter = 0
 limit = 5
 
 while True:
     current_val = pot.read()
-    # val = ' '.join(["current val is", str(current_val)])
-    # print(val)
     diff = current_val - prev_val
-    if diff >= threshold:
+    if diff >= threshold and prev_state is False:
         press = ' '.join(["diff is", str(diff), "trigger detected!" ])
         print(press)
         counter+=1
         current_count = ' '.join(["num triggers:", str(counter)])
         print(current_count)
-        sleep_ms(500) # this is a hack but stops repeated counts
+        prev_state = True
+        # sleep_ms(500) # this is a hack but stops repeated counts
         if counter == limit:
             print("DONE!")
             break # uncomment to break out of loop
             # counter = 0 # uncomment to reset loop to 0
     else:
         diff = current_val - prev_val
-        nopress = ' '.join(["diff is", str(diff), "no trigger!"])
-        print(nopress)
+        # nopress = ' '.join(["diff is", str(diff), "no trigger!"])
+        # print(nopress)
+        prev_state = False
     prev_val = current_val
     sleep_ms(20)
