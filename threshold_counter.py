@@ -25,7 +25,8 @@ while True:
         sleep_ms(500) # this is a hack but stops repeated counts
         if counter == limit:
             print("DONE!")
-            break
+            break # uncomment to break out of loop
+            # counter = 0 # uncomment to reset loop to 0
     else:
         diff = current_val - prev_val
         # print(diff)
