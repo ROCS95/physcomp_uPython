@@ -31,7 +31,7 @@ while True:
         if counter == limit:
             print("DONE!")
             break # uncomment to break out of loop
-            counter = 0 # uncomment to reset loop to 0
+            # counter = 0 # uncomment to reset loop to 0
     else:
         diff = current_val - prev_val
         # nopress = ' '.join(["diff is", str(diff), "no trigger!"])
