@@ -33,7 +33,7 @@ while True:
             break # uncomment to break out of loop
             # counter = 0 # uncomment to reset loop to 0
     else:
-        diff = current_val - prev_val
+        # diff = current_val - prev_val
         # nopress = ' '.join(["diff is", str(diff), "no trigger!"])
         # print(nopress)
         prev_state = False
