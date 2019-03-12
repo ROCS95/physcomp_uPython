@@ -13,10 +13,11 @@ pot.width(ADC.WIDTH_10BIT) # 0 - 1023
 
 threshold = 200
 
-prev_val = pot.read()
 prev_state = False
 counter = 0
 limit = 5
+
+prev_val = pot.read()
 
 while True:
     current_val = pot.read()
