@@ -38,7 +38,7 @@ while True:
             if val == win:
                 print("YOU WIN!")
                 print("GOODBYE!")
-                sleep_ms(350)
+                sleep_ms(250)
                 break
     elif button.value() and buttonPress == True:
         message = " ".join(["final value is:", str(val)])
