@@ -17,6 +17,7 @@ while True:
         print(msg)
         if counter == limit:
             print('limit reached!')
-            counter = 0
+#             counter = 0
+            break
     prev_val = button.value()
     sleep_ms(20)
